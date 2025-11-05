@@ -1,0 +1,167 @@
+/* Status badge colors */
+.status-badge {
+    font-size: 0.875rem;
+    text-transform: capitalize;
+}
+.status-badge.pending {
+    background-color: #ffc107;
+}
+.status-badge.shipped {
+    background-color: #0d6efd;
+    color: white;
+}
+.status-badge.delivered {
+    background-color: #198754;
+    color: white;
+}
+.status-badge.cancelled {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Order items styling */
+.order-items {
+    background-color: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+}
+
+/* Customer info section */
+.customer-info {
+    border-left: 4px solid #0d6efd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .order-item {
+        font-size: 0.9rem;
+    }
+    
+    .order-number {
+        font-size: 1rem;
+    }
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Form validation styles */
+.invalid-feedback {
+    display: none;
+    color: #dc3545;
+    font-size: 0.875rem;
+}
+
+input:invalid + .invalid-feedback {
+    display: block;
+}
+
+/* Animation for new results */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.order-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Shipping and tracking info */
+.shipping-info, .tracking-info {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+/* Notes styling */
+.order-notes {
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.875rem;
+    border-left: 3px solid #dee2e6;
+    padding-left: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* Chat interface styling */
+.chat-messages {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 1rem;
+}
+
+.chat-message {
+    max-width: 85%;
+    margin-bottom: 1rem;
+}
+
+.chat-message.user {
+    margin-left: auto;
+}
+
+.chat-message.user .message-content {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.chat-message.assistant .message-content {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.message-time {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.chat-input-form {
+    border-top: 1px solid #dee2e6;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+/* Chat message animations */
+.chat-message {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typing indicator */
+.typing-indicator {
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 1rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #6c757d;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: bounce 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
